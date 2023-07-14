@@ -291,3 +291,37 @@ console.log( newHero2.revealIdentity() )
 console.log( newHero1.turnEvil() )
 
 console.log(newHero1)
+
+
+// Subclase especifica para heroes con superpoderes => SuperHero
+
+// extends es palabra reservada para crear subclases
+class SuperHero extends Hero {
+  // hereda TODAS las propiedades y metodos de la clase padre
+
+  constructor(nameParam, identityParam, superPowerParam) {
+    super(nameParam, identityParam) // super envia estos parametros para crear las propiedades de la clase padre Hero
+    // puedo crear nuevas propiedades y metodos exclusivos de esta clase SuperHero
+    this.superPower = superPowerParam;
+  }
+
+  useSuperPower = () => {
+    return `${this.name} usa ${this.superPower}`
+  }
+
+
+}
+
+let newSuperHero1 = new SuperHero( "Spiderman", "Peter Parker", "Lanzar Telarañas" )
+
+console.log(newSuperHero1)
+
+console.log( newSuperHero1.useSuperPower() )
+
+
+console.log( newSuperHero1.name )
+console.log( newSuperHero1.superPower )
+
+let newSuperHero2 = new SuperHero( "Deadpool", "Ryan Reynolds", "Regeneración" )
+
+console.log( newSuperHero2.useSuperPower() )
